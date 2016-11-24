@@ -2,6 +2,8 @@
 
 namespace Blogger\BlogBundle\Controller;
 
+use Blogger\BlogBundle\Entity\Enquiry;
+use Blogger\BlogBundle\Form\EnquiryType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class PageController extends Controller
@@ -18,6 +20,24 @@ class PageController extends Controller
 
     public function contactAction()
     {
-        return $this->render('BloggerBlogBundle:Page:contact.html.twig');
+        $enquiry = new Enquiry();
+        $form = $this->createForm(new EnquiryType(), $enquiry);
+
+        $request = $this->getRequest();
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+
+            if ($form->isValid()) {
+                // Perform some action, such as sending an email
+
+                // Redirect - This is important to prevent users re-posting
+                // the form if they refresh the page
+                return $this->redirect($this->generateUrl('BloggerBlogBundle_contact'));
+            }
+        }
+
+        return $this->render('BloggerBlogBundle:Page:contact.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 }
