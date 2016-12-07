@@ -25,8 +25,8 @@ class PageController extends Controller
 
     public function contactAction()
     {
-        $session = new Session();
-        $session->start();
+//        $session = new Session();
+//        $session->start();
 
         $enquiry = new Enquiry();
         $form = $this->createForm(new EnquiryType(), $enquiry);
@@ -62,9 +62,16 @@ class PageController extends Controller
         ));
     }
 
-    public function indexAction()
-    {
-        return $this->render('BloggerBlogBundle:Page:index.html.twig');
+    public function indexAction() {
+        $em = $this->getDoctrine()
+            ->getEntityManager();
+
+        $blogs = $em->getRepository('BloggerBlogBundle:Blog')
+            ->getLatestBlogs();
+
+        return $this->render('BloggerBlogBundle:Page:index.html.twig', array(
+            'blogs' => $blogs
+        ));
     }
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
