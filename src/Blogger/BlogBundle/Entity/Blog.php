@@ -17,6 +17,11 @@ class Blog
      */
     protected $comments;
 
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
     public function __construct()
     {
 
