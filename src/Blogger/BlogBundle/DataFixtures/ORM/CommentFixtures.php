@@ -15,18 +15,21 @@ class CommentFixtures extends AbstractFixture implements OrderedFixtureInterface
         $comment->setUser('symfony');
         $comment->setComment('To make a long story short. You can\'t go wrong by choosing Symfony! And no one has ever been fired for using Symfony.');
         $comment->setBlog($manager->merge($this->getReference('blog-1')));
+        $comment->setCreated(new \DateTime("2011-07-25 22:28:42"));
         $manager->persist($comment);
 
         $comment = new Comment();
         $comment->setUser('David');
         $comment->setComment('To make a long story short. Choosing a framework must not be taken lightly; it is a long-term commitment. Make sure that you make the right selection!');
         $comment->setBlog($manager->merge($this->getReference('blog-1')));
+        $comment->setCreated(new \DateTime("2011-07-25 22:28:42"));
         $manager->persist($comment);
 
         $comment = new Comment();
         $comment->setUser('Dade');
         $comment->setComment('Anything else, mom? You want me to mow the lawn? Oops! I forgot, New York, No grass.');
         $comment->setBlog($manager->merge($this->getReference('blog-2')));
+        $comment->setCreated(new \DateTime("2011-07-25 22:28:42"));
         $manager->persist($comment);
 
         $comment = new Comment();
@@ -96,24 +99,28 @@ class CommentFixtures extends AbstractFixture implements OrderedFixtureInterface
         $comment->setUser('Stanley');
         $comment->setComment('It\'s not gonna end like this.');
         $comment->setBlog($manager->merge($this->getReference('blog-3')));
+        $comment->setCreated(new \DateTime("2011-07-25 22:28:42"));
         $manager->persist($comment);
 
         $comment = new Comment();
         $comment->setUser('Gabriel');
         $comment->setComment('Oh, come on, Stan. Not everything ends the way you think it should. Besides, audiences love happy endings.');
         $comment->setBlog($manager->merge($this->getReference('blog-3')));
+        $comment->setCreated(new \DateTime("2011-07-25 22:28:42"));
         $manager->persist($comment);
 
         $comment = new Comment();
         $comment->setUser('Mile');
         $comment->setComment('Doesn\'t Bill Gates have something like that?');
         $comment->setBlog($manager->merge($this->getReference('blog-5')));
+        $comment->setCreated(new \DateTime("2011-07-25 22:28:42"));
         $manager->persist($comment);
 
         $comment = new Comment();
         $comment->setUser('Gary');
         $comment->setComment('Bill Who?');
         $comment->setBlog($manager->merge($this->getReference('blog-5')));
+        $comment->setCreated(new \DateTime("2011-07-25 22:28:42"));
         $manager->persist($comment);
 
         $manager->flush();

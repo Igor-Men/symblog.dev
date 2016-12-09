@@ -18,7 +18,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Blogger\BlogBundle\BloggerBlogBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle()
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new \Symfony\Bundle\AsseticBundle\AsseticBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

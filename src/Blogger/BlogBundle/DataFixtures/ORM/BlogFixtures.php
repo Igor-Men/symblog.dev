@@ -19,7 +19,7 @@ class BlogFixtures extends AbstractFixture implements OrderedFixtureInterface
         $blog1->setImage('beach.jpg');
         $blog1->setAuthor('dsyph3r');
         $blog1->setTags('symfony2, php, paradise, symblog');
-        $blog1->setCreated(new \DateTime());
+        $blog1->setCreated(new \DateTime("2011-07-23 06:12:33"));
         $blog1->setUpdated($blog1->getCreated());
         $manager->persist($blog1);
 

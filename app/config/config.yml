@@ -32,6 +32,13 @@ framework:
     fragments:       ~
     http_method_override: true
 
+# Enable my Bungle assets
+assetic:
+    filters:
+        yui_css:
+            jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.8.jar
+    bundles:    [BloggerBlogBundle]
+
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
