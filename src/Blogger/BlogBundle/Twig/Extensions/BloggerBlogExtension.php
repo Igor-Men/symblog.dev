@@ -27,7 +27,7 @@ class BloggerBlogExtension extends \Twig_Extension
             $time = $delta;
             $duration = $time . " second" . (($time > 1) ? "s" : "") . " ago";
         }
-        else if ($delta <= 3600)
+        else if ($delta < 3600)
         {
             // Mins
             $time = floor($delta / 60);

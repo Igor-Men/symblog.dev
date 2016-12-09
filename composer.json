@@ -25,7 +25,8 @@
         "doctrine/data-fixtures" : "dev-master",
         "doctrine/doctrine-migrations-bundle": "dev-master",
         "doctrine/migrations": "dev-master",
-        "symfony/assetic-bundle": "^2.8"
+        "symfony/assetic-bundle": "^2.8",
+        "phpunit/phpunit": "5.7.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
